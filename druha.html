@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>Mapa</title>
+    <meta charset="utf-8" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    
+    <script src="https://unpkg.com/geogrid.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styl.css"/>
+   
+
+    
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Zadanie 4</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="index.html">Fotogaléria</a>
+          <a class="nav-link" href="druha.html">Mapa</a>
+       
+        </div>
+      </div>
+     
+    </div>
+  </nav>
+ 
+<div id="map"></div>
+
+
+<footer id="-footer" class="flex-shrink-0 py-2 bg-dark text-white-50">
+  <div class="container text-center">
+    <button class="button" onclick="myFunction()">Trasa</button>
+    <label class="switch">
+      <input type="checkbox" id="myCheck" onclick="myFunction1()">
+      <span class="slider round"></span>
+    </label>
+
+  </div>
+</footer>
+<script>
+
+    const gps = {lat :48.19166819116901,lon : 16.380953655872624} ;
+
+    var map = L.map('map').setView(gps, 14);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    }).addTo(map);
+
+    L.control.scale({imperial: true, metric: true}).addTo(map);
+
+    L.marker({lat :48.19166819116901,lon : 16.380953655872624}).bindPopup("Belveder").addTo(map); 
+    L.marker({lat :47.5010602497734,lon :  19.053851073783242}).bindPopup('budapest centrum').addTo(map); 
+    L.marker({lat :47.50223169582447,lon : 19.034070845920255}).bindPopup('budapest kostol').addTo(map);
+    L.marker({lat :47.502684866533016,lon : 19.034808774706722}).bindPopup('Budapest zhora').addTo(map);
+    L.marker({lat :47.860546354958345,lon : 16.82661381195935}).bindPopup('majak').addTo(map);
+    L.marker({lat :39.47251306893975,lon :  -0.3248727889897805}).bindPopup('valencia').addTo(map);
+    L.marker({lat :48.05394887107867,lon : 17.569776944003603}).bindPopup('okruh').addTo(map);
+
+
+  function myFunction1() {
+  var checkBox = document.getElementById("myCheck");
+  var text = document.getElementById("text");
+  if (checkBox.checked == true){
+    L.Routing.control({
+        waypoints: [
+            L.latLng({lat :48.19166819116901,lon : 16.380953655872624}),
+            L.latLng({lat :47.5010602497734,lon :  19.053851073783242}),
+            L.latLng({lat :47.50223169582447,lon : 19.034070845920255}),
+            L.latLng({lat :47.502684866533016,lon : 19.034808774706722}),
+            L.latLng({lat :47.860546354958345,lon : 16.82661381195935}),
+            L.latLng({lat :39.47251306893975,lon :  -0.3248727889897805}),
+            L.latLng({lat :48.05394887107867,lon : 17.569776944003603})
+        ],
+        routeWhileDragging: true,
+        geocoder: L.Control.Geocoder.nominatim()
+    }).addTo(map);
+  } else {
+    L.Routing.control({
+        waypoints: [
+            L.latLng(),
+            L.latLng(),
+        ],
+        routeWhileDragging: false,
+        geocoder: L.Control.Geocoder.nominatim()
+    }).addTo(map);
+  }
+}
+function myFunction() {
+      L.Routing.control({
+        waypoints: [
+            L.latLng({lat :48.19166819116901,lon : 16.380953655872624}),
+            L.latLng({lat :47.5010602497734,lon :  19.053851073783242}),
+            L.latLng({lat :47.50223169582447,lon : 19.034070845920255}),
+            L.latLng({lat :47.502684866533016,lon : 19.034808774706722}),
+            L.latLng({lat :47.860546354958345,lon : 16.82661381195935}),
+            L.latLng({lat :39.47251306893975,lon :  -0.3248727889897805}),
+            L.latLng({lat :48.05394887107867,lon : 17.569776944003603})
+        ],
+        routeWhileDragging: true,
+        geocoder: L.Control.Geocoder.nominatim()
+    }).addTo(map);}
+    
+</script>
+
+
+</body>
+</html>

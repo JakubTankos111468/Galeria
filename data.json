@@ -1,0 +1,95 @@
+{
+    "images": [
+        {
+            "Img1":"photos/kastiel1.jpg",
+            "id": 1,
+            "nazov": "Humenský kaštieľ",
+            "popis": "Humenský kaštieľ v lete" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img2":"photos/kastie2.jpg",
+            "id": 2,
+            "nazov": "Humenský kaštieľ",
+            "popis": "humenský kaštieľ pohľad zhora" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img3":"photos/kastie3.jpg",
+            "id": 3,
+            "nazov": "Humenský kaštieľ",
+            "popis": "Humenský kaštieľ v noci" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img4":"photos/fotka4.jpg",
+            "id": 4,
+            "nazov": "Fontána",
+            "popis": "Centrum mesta s fontánou" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img5":"photos/fotka5.jpg",
+            "id": 5,
+            "nazov": "Humenné",
+            "popis": "Pohľad zhora na humenné" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img6":"photos/fotka6.jpg",
+            "id": 6,
+            "nazov": "Skanzén",
+            "popis": "" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img7":"photos/fotka7.jpg",
+            "id": 7,
+            "nazov": "Kostol",
+            "popis": "" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img8":"photos/fotka8.jpg",
+            "id": 8,
+            "nazov": "Kaštieľ",
+            "popis": "" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img9":"photos/fotka9.jpg",
+            "id": 9,
+            "nazov": "Centrum mesta",
+            "popis": "" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        },
+        {
+            "Img10":"photos/fotka10.jpg",
+            "id": 10,
+            "nazov": "Kúpalisko",
+            "popis": "" ,
+            "datum": "",
+            "cas":"",
+            "GPS":""
+        }
+    ]
+
+}
